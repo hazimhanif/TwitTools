@@ -23,7 +23,7 @@ A python Twitter crawler. The crawler uses Twitter API to query the data from tw
 * Change the API key and the directory to your own respective and desired directory.
 * Execute the python script.
 
-## TwitXtract
+## TwitClassify
 A python script that is used to classify the data collected using TwitCrawl. The classification is based on the user accounts and it needs to be manually classify. The script is used for ground truth creation to manully classify a Twitter user whether he/she is a human, robot or cyborg.
 
 ##### How it works:
