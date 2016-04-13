@@ -36,28 +36,28 @@ A python script that is used to classify the data collected using TwitCrawl. The
 
 ##### How to *classify* ?
 ###### Aspects to monitored:
--Visit homepage
--Check tweets
--URLs
--Tweeting device
--User profile
--No of followers
--No of friends
+* Visit homepage
+* Check tweets
+* URLs
+* Tweeting device
+* User profile
+* No of followers
+* No of friends
 
 
 ###### How to detect Humans:
--Turing tester communicates with an unknown subject for 5 minutes.
--The tweet content is expressed in relatively
--Human like intelligence presence in tweet
+* Turing tester communicates with an unknown subject for 5 minutes.
+* The tweet content is expressed in relatively
+* Human like intelligence presence in tweet
 
 ###### How to detect bots:
--The lack of intelligent or original content.
--Excessive automation of tweeting, like automatic updates of blog entries or RSS feeds.
--The abundant presence of spam or malicious URLs (i.e., phishing or malware) in tweets or the user profile.
--Repeatedly posting duplicate tweets
--Posting links with unrelated tweets.
--Aggressive following behavior
+* The lack of intelligent or original content.
+* Excessive automation of tweeting, like automatic updates of blog entries or RSS feeds.
+* The abundant presence of spam or malicious URLs (i.e., phishing or malware) in tweets or the user profile.
+* Repeatedly posting duplicate tweets
+* Posting links with unrelated tweets.
+* Aggressive following behavior
 
 ###### How to detect Cyborg:
--Evidence of both human and bot participation.
--May contain very different types of tweets(Human like intelligence + RSS Feeds/Auto Update)
+* Evidence of both human and bot participation.
+* May contain very different types of tweets(Human like intelligence + RSS Feeds/Auto Update)
