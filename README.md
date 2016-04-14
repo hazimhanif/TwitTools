@@ -30,10 +30,10 @@ A python script that performs cleaning of the data. The data cleaning process is
 1. Execute the script.
 3. The script will iterate every depth and check all the user data.
 2. It move the user which does not have enough data:
-* user_data.dump
-* tweets.dump
-* followers.txt
-* friends.txt
+** user_data.dump
+** tweets.dump
+** followers.txt
+** friends.txt
 3. The user is the moved to a "Drop" folder where all the "broken"/"contaminated" data were stored.
 
 ## TwitClassify
