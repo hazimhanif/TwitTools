@@ -1,5 +1,8 @@
 # TwitTools
-TwitTools contains 2 tools that are TwitCrawl and TwitClassify.
+TwitTools contains 3 tools: 
+* TwitCrawl
+* TwitClean
+* TwitClassify
 
 ## TwitCrawl
 A python Twitter crawler. The crawler uses Twitter API to query the data from twitter. Tweepy is used as the python Twitter API wrapper in the script.
