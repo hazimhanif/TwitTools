@@ -23,8 +23,21 @@ A python Twitter crawler. The crawler uses Twitter API to query the data from tw
 * Change the API key and the directory to your own respective and desired directory.
 * Execute the python script.
 
+## TwitClean
+A python script that performs cleaning of the data. The data cleaning process is used as a preparation before it is being classify by TwitClassify.
+
+##### How it works:
+1. Execute the script.
+3. The script will iterate every depth and check all the user data.
+2. It move the user which does not have enough data:
+* user_data.dump
+* tweets.dump
+* followers.txt
+* friends.txt
+3. The user is the moved to a "Drop" folder where all the "broken"/"contaminated" data were stored.
+
 ## TwitClassify
-A python script that is used to classify the data collected using TwitCrawl. The classification is based on the user accounts and it needs to be manually classify. The script is used for ground truth creation to manully classify a Twitter user whether he/she is a human, robot or cyborg.
+A python script that is used to classify the data collected using TwitCrawl and cleaned using TwitClean. The classification is based on the user accounts and it needs to be manually classify. The script is used for ground truth creation to manully classify a Twitter user whether he/she is a human, robot or cyborg.
 
 ##### How it works:
 1. The script will fetch the first user based the depth. Depth 0 is the initial depth or the seed depth.
@@ -61,3 +74,6 @@ A python script that is used to classify the data collected using TwitCrawl. The
 ###### How to detect Cyborg:
 * Evidence of both human and bot participation.
 * May contain very different types of tweets(Human like intelligence + RSS Feeds/Auto Update)
+
+ 
+
