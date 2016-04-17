@@ -148,71 +148,85 @@ def xtract_user_data():
         print(e, " in extract user data")
     
 def decision(doc):
-    global counter_human
-    global counter_bot
-    global counter_cyborg
-    global counter_drop
-    inp = "o"
-    while not("h" is inp or "b" is  inp or "c" is inp or "d" is inp) :
-        inp = input("Please classify: Bot(b), Cyborg(c), Human(h), Drop(d): ")
-     
-    if inp=="b":
-        dir_temp = "%s/bot" % dir_id   
-        f = open(dir_temp,"wb")
-        f.close()
-        list_l = os.listdir(dir_id)
-        dst_dir = "D:/Classify/Bot/%s" % doc
-        os.makedirs(dst_dir)
-        for file in list_l:
-            src_f = "%s/%s" %(dir_id,file)
-            dst_f = "%s/%s" %(dst_dir,file)
-            shutil.move(src_f, dst_f)
-        os.rmdir(dir_id)
-        counter_bot +=1
-
-
-    elif inp=="c":   
-        dir_temp = "%s/cyborg" % dir_id   
-        f = open(dir_temp,"wb")
-        f.close()
-        list_l = os.listdir(dir_id)
-        dst_dir = "D:/Classify/Cyborg/%s" % doc
-        os.makedirs(dst_dir)
-        for file in list_l:
-            src_f = "%s/%s" %(dir_id,file)
-            dst_f = "%s/%s" %(dst_dir,file)
-            shutil.move(src_f, dst_f)
-        os.rmdir(dir_id)
-        counter_cyborg +=1           
-
-    elif inp=="h":   
-        dir_temp = "%s/human" % dir_id   
-        f = open(dir_temp,"wb")
-        f.close()
-        list_l = os.listdir(dir_id)
-        dst_dir = "D:/Classify/Human/%s" % doc
-        os.makedirs(dst_dir)
-        for file in list_l:
-            src_f = "%s/%s" %(dir_id,file)
-            dst_f = "%s/%s" %(dst_dir,file)
-            shutil.move(src_f, dst_f)
-        os.rmdir(dir_id)
-        counter_human +=1       
-
-    else:   
-        dir_temp = "%s/drop" % dir_id   
-        f = open(dir_temp,"wb")
-        f.close()
-        list_l = os.listdir(dir_id)
-        dst_dir = "D:/Classify/Drop/%s" % doc
-        os.makedirs(dst_dir)
-        for file in list_l:
-            src_f = "%s/%s" %(dir_id,file)
-            dst_f = "%s/%s" %(dst_dir,file)
-            shutil.move(src_f, dst_f)
-        os.rmdir(dir_id)
-        counter_drop +=1   
-
+    try:
+        global counter_human
+        global counter_bot
+        global counter_cyborg
+        global counter_drop
+        check=""
+        inp = "o"
+        while not("h" is inp or "b" is  inp or "c" is inp or "d" is inp) :
+            inp = input("Please classify: Bot(b), Cyborg(c), Human(h), Drop(d): ")
+         
+        if inp=="b":
+            dir_temp = "%s/bot" % dir_id   
+            f = open(dir_temp,"wb")
+            f.close()
+            list_l = os.listdir(dir_id)
+            dst_dir = "D:/Classify/Bot/%s" % doc
+            check="bot"
+            os.makedirs(dst_dir)
+            for file in list_l:
+                src_f = "%s/%s" %(dir_id,file)
+                dst_f = "%s/%s" %(dst_dir,file)
+                shutil.move(src_f, dst_f)
+            os.rmdir(dir_id)
+            counter_bot +=1
+    
+    
+        elif inp=="c":   
+            dir_temp = "%s/cyborg" % dir_id   
+            f = open(dir_temp,"wb")
+            f.close()
+            list_l = os.listdir(dir_id)
+            dst_dir = "D:/Classify/Cyborg/%s" % doc
+            check="cyborg"
+            os.makedirs(dst_dir)
+            for file in list_l:
+                src_f = "%s/%s" %(dir_id,file)
+                dst_f = "%s/%s" %(dst_dir,file)
+                shutil.move(src_f, dst_f)
+            os.rmdir(dir_id)
+            counter_cyborg +=1           
+    
+        elif inp=="h":   
+            dir_temp = "%s/human" % dir_id   
+            f = open(dir_temp,"wb")
+            f.close()
+            list_l = os.listdir(dir_id)
+            dst_dir = "D:/Classify/Human/%s" % doc
+            check="human"
+            os.makedirs(dst_dir)
+            for file in list_l:
+                src_f = "%s/%s" %(dir_id,file)
+                dst_f = "%s/%s" %(dst_dir,file)
+                shutil.move(src_f, dst_f)
+            os.rmdir(dir_id)
+            counter_human +=1       
+    
+        else:   
+            dir_temp = "%s/drop" % dir_id   
+            f = open(dir_temp,"wb")
+            f.close()
+            list_l = os.listdir(dir_id)
+            dst_dir = "D:/Classify/Drop/%s" % doc
+            check="drop"
+            os.makedirs(dst_dir)
+            for file in list_l:
+                src_f = "%s/%s" %(dir_id,file)
+                dst_f = "%s/%s" %(dst_dir,file)
+                shutil.move(src_f, dst_f)
+            os.rmdir(dir_id)
+            counter_drop +=1
+            
+    except FileExistsError:
+        a= "File already exist in %s. Are you sure you want to delete the user %s ? (y/n): " % (check,doc)
+        inp = input(a)
+        if inp=="y":
+            shutil.rmtree(dir_id)
+        else:
+            return
+        
 def check_url():
     data = url_link
     url= 'https://sb-ssl.google.com/safebrowsing/api/lookup?client=python&key=AIzaSyA1M7fY7G432oC9x2tdytCDWb86yAbrz0s&appver=0.2&pver=3.1'
@@ -236,7 +250,7 @@ def dir_count():
     counter_drop = len(os.listdir("D:/Classify/Drop/"))
 
     counter = counter_bot + counter_human + counter_cyborg + counter_drop
-
+    
 #Start the extractor
 init_auto()
 
