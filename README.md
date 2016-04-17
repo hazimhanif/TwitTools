@@ -51,6 +51,9 @@ A python script that is used to classify the data collected using TwitCrawl and 
 6. The process will go on with the next user.
 
 ##### How to *classify* ?
+Source : Chu, Z., et al. Detecting automation of twitter accounts: Are you a human, bot, or cyborg? IEEE Transactions on Dependable and Secure Computing, 2012. 9, 811-824 DOI: 10.1109/TDSC.2012.75.
+(http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=6280553)
+
 ###### Aspects to monitored:
 * Visit homepage
 * Check tweets
