@@ -40,10 +40,10 @@ while depth<3:
     for doc in list_dir:
         user+=1
         dir_id = '%s/%s' % (dir_depth,str(doc))
-        skip=clean(doc,dir_id)
-        print(user)
-        if skip==True:
+        clean_status=clean(doc,dir_id)
+        print("Total Number user: ",user)
+        if clean_status==True:
             counter +=1
-            print(counter)
+            print("Clean user count: ", counter)
     
     depth +=1
