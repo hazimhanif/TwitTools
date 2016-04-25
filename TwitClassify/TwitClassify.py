@@ -228,14 +228,19 @@ def decision(doc):
             return
         
 def check_url():
-    data = url_link
-    url= 'https://sb-ssl.google.com/safebrowsing/api/lookup?client=python&key=AIzaSyA1M7fY7G432oC9x2tdytCDWb86yAbrz0s&appver=0.2&pver=3.1'
-    r= requests.post(url,data)
-    print("URL Status Code: ",r.status_code)
-    
-    wordcount = Counter(r.text.split())
-    for item in wordcount.items():
-        print("{}\t{}".format(*item))
+    try:
+        data = url_link
+        url= 'https://sb-ssl.google.com/safebrowsing/api/lookup?client=python&key=AIzaSyA1M7fY7G432oC9x2tdytCDWb86yAbrz0s&appver=0.2&pver=3.1'
+        r= requests.post(url,data)
+        print("URL Status Code: ",r.status_code)
+        
+        wordcount = Counter(r.text.split())
+        for item in wordcount.items():
+            print("{}\t{}".format(*item))
+    except Exception as e:
+        print("Cannot proceed for URL checking because: ",e)
+        print("")
+        
     
 def dir_count():
     global counter
