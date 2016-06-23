@@ -83,7 +83,7 @@ Source : Chu, Z., et al. Detecting automation of twitter accounts: Are you a hum
 * May contain very different types of tweets(Human like intelligence + RSS Feeds/Auto Update)
 
  
-## TwitClassify
+## BlacklistChecker
 
 ###### How it workds?:
 1. The script will check the URL in every twitter account.
