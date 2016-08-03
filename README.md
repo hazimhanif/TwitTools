@@ -1,8 +1,9 @@
 # TwitTools
-TwitTools contains 4 tools: 
+TwitTools contains 5 tools: 
 * TwitCrawl
 * TwitClean
 * TwitClassify
+* TwitXtract
 * BlacklistChecker
 
 ## TwitCrawl
@@ -82,10 +83,17 @@ Source : Chu, Z., et al. Detecting automation of twitter accounts: Are you a hum
 * Evidence of both human and bot participation.
 * May contain very different types of tweets(Human like intelligence + RSS Feeds/Auto Update)
 
- 
+## TwitXtract
+
+###### How it works?:
+1. The script will convert the raw json twitter dumps into a csv file
+2. The csv file will have more than 1000+ columns due to all the sub-json structure were parsed effectively
+3. Number of user and number of tweets per user is configurable.
+4. It is a time consuming process.
+
 ## BlacklistChecker
 
-###### How it workds?:
+###### How it works?:
 1. The script will check the URL in every twitter account.
 2. The URL checked is up to 490 URLs.
 3. Each URL is cross checked with 3 differnt spam/malware/phishing checking tools:
