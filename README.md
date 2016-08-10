@@ -1,10 +1,11 @@
 # TwitTools
-TwitTools contains 5 tools: 
+TwitTools contains 6 tools: 
 * TwitCrawl
 * TwitClean
 * TwitClassify
 * TwitXtract
 * BlacklistChecker
+* R-Script
 
 ## TwitCrawl
 A python Twitter crawler. The crawler uses Twitter API to query the data from twitter. Tweepy is used as the python Twitter API wrapper in the script.
@@ -101,3 +102,8 @@ Source : Chu, Z., et al. Detecting automation of twitter accounts: Are you a hum
 * Phishtank
 * URLBlacklist
 4. If any of the user's URL is detected as malicious, the user will be move into the blacklist category.
+
+## R-Script
+
+###### How it works?:
+-Pre processing of the RAW csv created by TwitXtract.
